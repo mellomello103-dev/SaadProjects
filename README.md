@@ -1,2 +1,2 @@
-                                    This is a Login Form  App Using Django&React Framework
+                                    This is a Login Form  App Using Django&React Frameworks
                                     
