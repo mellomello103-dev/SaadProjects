@@ -8,6 +8,7 @@ from .models import Profile
 # LOGIN
 def login_view(request):
     if request.method == 'POST':
+        
         username = request.POST['username']
         password = request.POST['password']
 
@@ -26,12 +27,16 @@ def register(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        #for #ing password
+        if User.objects.filter(username=username).exists():
+            return HttpResponse('the user is aleardy exist, try another one')
+        
+        
+    
         User.objects.create_user(username=username, password=password)
-
         return redirect('myFirstapp:login')
-
+        
     return render(request, 'register.html')
+
 
 
 # HOME
@@ -47,8 +52,7 @@ def home(request):
 
     return render(request, 'home.html', context)
 
-
-def withdraw(request):
+ #def withdraw(request):
     if request.method == 'POST':
         amount = float(request.POST['amount'])
         profile = Profile.objects.get(user=request.user)
@@ -62,5 +66,5 @@ def withdraw(request):
 
 # LOGOUT
 def logout_view(request):
-    logout(request)
+    logout(request)  
     return redirect('myFirstapp:login')
