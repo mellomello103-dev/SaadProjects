@@ -12,8 +12,8 @@
 
 ## 🛠️ التقنيات المستخدمة (Tech Stack)
 *   **Back-End Framework:** Django (Python 3.13)
-*   **Front-End:** HTML5, CSS3 (قوالب مخصصة داخل التطبيق)
-*   **Database:** SQLite (قاعدة بيانات خفيفة ومدمجة ومرفقة مع المشروع كملف `db.sqlite3`)
+*   **Front-End:** React
+*   **Database:** Django ORM
 
 ---
 
